@@ -1,3 +1,3 @@
-# VGA-palette-colors-displayed-in-a-source-code-I-made
+# VGA-palette-colors-displayed-in-a-source-code-I-made. And a little flame effect.
 
-First download MASM 6.15. Then locate masm.exe and link.exe. In this directory put pixel.asm. Then type in MS-Dos for Windows: masm pixel.asm and link pixel.obj. Then you have pixel.exe. But it's a 16-bit MS-Dos program. You have to drag and drop the pixel.exe-file into DOSBox. A colorfull line!
+First download TASM (Turbo Assembler). Then put pixel.asm and flames.asm into the same directory as tasm.exe and tlink.exe. Then drag and drop tasm.exe into DOSBox. Then type tasm pixel (or tasm flames) and then type tlink pixel (or tlink flames). Now you can execute pixel.exe (or flames.exe.)
