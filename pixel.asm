@@ -15,10 +15,10 @@ assume cs:code_seg,ds:data_seg,ss:stack_seg
 start:
 mov ax,data_seg  ;empty
 mov ds,ax 		 ;empty
-mov ah,0		 ;set video function in a-high
-mov al,13	     ;set video mode 13 in a-low, 256 colors VGA resolution 
-				 ;320 width X 200 long
-int 10			 ;call set video function
+mov ah,00	 	 ;set video function in a-high
+mov al,13h	     ;set video mode 13 in a-low, 256 colors VGA resolution 
+				 ;320 width X 200 long (h stands for hexadecimal)
+int 10h			 ;call set video function
 
 ;mov AH,4Fh        ;Super VGA support
 ;mov AL,07h        ;Display Start Control
@@ -27,13 +27,13 @@ int 10			 ;call set video function
 ;mov CX,32         ;First Displayed Pixel in Scan Line
 
 mov ah,0ch			;set function write pixel (h stands for hexadecimal)
-mov al,0			;in al color number beginning with color 0 
+mov al,00			;in al color number beginning with color 0 
 mov cx,32			;the required colomn number. 32 - 256 - 32 width (total 320 pixels)
 mov dx,100			;the required line number. 
 					;beginning at the half of the screen line 100
 mov bh,00			;video page 0 (dunno what this is doing)
 verder:
-int 10				;call put on pixel
+int 10h  			;call put on pixel
 inc al				;increase with 1 color number
 inc cx				;next pixel number in column
 cmp cx,288			;compare colomn number reached 256 colors (256 + 32 width)
